@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniFreeGames.net - Speel gratis spelletjes!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basis instellingen */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        /* Navigatiebalk */
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ff4757;
+            text-decoration: none;
+        }
+
+        .search-bar {
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 2px solid #e1e8ed;
+            outline: none;
+            font-size: 16px;
+            width: 250px;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar:focus {
+            border-color: #ff4757;
+        }
+
+        /* Hoofdinhoud */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-weight: 900;
+            color: #2f3542;
+        }
+
+        /* Het Poki-stijl Grid */
+        .game-grid {
+            display: grid;
+            /* Dit zorgt ervoor dat de kaarten zich aanpassen aan het scherm */
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        /* Spel Kaartjes */
+        .game-card {
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 160px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .game-title {
+            padding: 12px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 15px;
+            background: white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Uitgelicht spel (grote kaart) */
+        .featured-game {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .featured-game .game-image {
+            height: 100%;
+            min-height: 340px;
+        }
+        
+        .featured-game .game-title {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #747d8c;
+            margin-top: 40px;
+        }
+
+        /* Responsief voor mobiel */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .search-bar {
+                width: 100%;
+            }
+            .featured-game {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .featured-game .game-image {
+                height: 160px;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">MiniFreeGames</a>
+        <input type="text" class="search-bar" placeholder="Zoek een spel...">
+    </header>
+
+    <main>
+        <h2>Nieuw & Populair</h2>
+        <div class="game-grid">
+            
+            <a href="race-kampioen.html" class="game-card featured-game">
+                <img src="https://placehold.co/400x400/ff6b81/white?text=Race+Kampioen" alt="Race Kampioen" class="game-image">
+                <div class="game-title">Race Kampioen</div>
+            </a>
+
+            <a href="spring-avontuur.html" class="game-card">
+                <img src="https://placehold.co/200x200/1e90ff/white?text=Spring+Avontuur" alt="Spring Avontuur" class="game-image">
+                <div class="game-title">Spring Avontuur</div>
+            </a>
+
+            <a href="puzzel-blokken.html" class="game-card">
+                <img src="https://placehold.co/200x200/2ed573/white?text=Puzzel+Blokken" alt="Puzzel Blokken" class="game-image">
+                <div class="game-title">Puzzel Blokken</div>
+            </a>
+
+            <a href="ruimte-schutter.html" class="game-card">
+                <img src="https://placehold.co/200x200/3742fa/white?text=Ruimte+Schutter" alt="Ruimte Schutter" class="game-image">
+                <div class="game-title">Ruimte Schutter</div>
+            </a>
+
+            <a href="woord-zoeker.html" class="game-card">
+                <img src="https://placehold.co/200x200/ffa502/white?text=Woord+Zoeker" alt="Woord Zoeker" class="game-image">
+                <div class="game-title">Woord Zoeker</div>
+            </a>
+            
+            <a href="kleuren-lijn.html" class="game-card">
+                <img src="https://placehold.co/200x200/ff4757/white?text=Kleuren+Lijn" alt="Kleuren Lijn" class="game-image">
+                <div class="game-title">Kleuren Lijn</div>
+            </a>
+
+             <a href="doolhof.html" class="game-card">
+                <img src="https://placehold.co/200x200/5352ed/white?text=Doolhof" alt="Doolhof" class="game-image">
+                <div class="game-title">Doolhof</div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MiniFreeGames.net - Alle rechten voorbehouden.</p>
+    </footer>
+
+</body>
+</html>
