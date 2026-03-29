@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiniFreeGames.net - Speel gratis spelletjes!</title>
+    <title>MiniFreeGames.net - Play free games!</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
@@ -187,6 +187,29 @@
     <footer>
         <p>&copy; 2026 MiniFreeGames.net - Made by Hiddo.</p>
     </footer>
+	<script>
+			// Wait for the page to fully load
+			document.addEventListener('DOMContentLoaded', () => {
+				const searchBar = document.querySelector('.search-bar');
+				const gameCards = document.querySelectorAll('.game-card');
 
+				// Listen for any typing in the search bar
+				searchBar.addEventListener('input', (e) => {
+					const searchTerm = e.target.value.toLowerCase();
+
+					// Loop through all the game cards
+					gameCards.forEach(card => {
+						const title = card.querySelector('.game-title').textContent.toLowerCase();
+
+						// If the title includes the search term, show it. Otherwise, hide it.
+						if (title.includes(searchTerm)) {
+							card.style.display = 'flex'; 
+						} else {
+							card.style.display = 'none';
+						}
+					});
+				});
+			});
+		</script>
 </body>
 </html>
