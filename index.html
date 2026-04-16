@@ -6,170 +6,7 @@
     <title>MiniFreeGames.net - Play free games!</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <style>
-      /* Basis instellingen */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Nunito', sans-serif;
-        }
-
-        body {
-            background-color: #dcfaff; /* Dark fallback color */
-            background-image: url('background.png?v=2'); /* Your tiled background */
-            color: #f1f2f6; /* Changed to off-white for contrast */
-        }
-
-        /* Navigatiebalk */
-        header {
-            background-color: rgba(30, 39, 46, 0.9); /* Dark, slightly transparent */
-            padding: 15px 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Stronger shadow for depth */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(5px); /* Adds a cool blur effect to the transparency */
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 900;
-            color: #ff4757;
-            text-decoration: none;
-        }
-
-        .search-bar {
-            padding: 10px 15px;
-            border-radius: 20px;
-            border: 2px solid #57606f; /* Darker border */
-            background-color: rgba(47, 53, 66, 0.8); /* Dark background for input */
-            color: #ffffff; /* White text when typing */
-            outline: none;
-            font-size: 16px;
-            width: 250px;
-            transition: border-color 0.3s, background-color 0.3s;
-        }
-
-        .search-bar::placeholder {
-            color: #a4b0be; /* Lighter grey for placeholder text */
-        }
-
-        .search-bar:focus {
-            border-color: #ff4757;
-            background-color: rgba(47, 53, 66, 1);
-        }
-
-        /* Hoofdinhoud */
-        main {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-weight: 900;
-            color: #ffffff; /* White text */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Makes text readable over background */
-        }
-
-        /* Het Poki-stijl Grid */
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 20px;
-        }
-
-        /* Spel Kaartjes */
-        .game-card {
-            background-color: rgba(47, 53, 66, 0.85); /* Dark, semi-transparent cards */
-            border-radius: 20px;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
-        }
-
-        .game-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.6);
-        }
-
-        .game-image {
-            width: 100%;
-            height: 160px;
-            background-color: #1e272e; /* Darker image fallback */
-            object-fit: cover;
-        }
-
-        .game-title {
-            padding: 12px;
-            font-weight: 700;
-            text-align: center;
-            font-size: 15px;
-            background: rgba(47, 53, 66, 0.95);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Uitgelicht spel (grote kaart) */
-        .featured-game {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .featured-game .game-image {
-            height: 100%;
-            min-height: 340px;
-        }
-        
-        .featured-game .game-title {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: rgba(30, 39, 46, 0.9); /* Dark, semi-transparent bar */
-            font-size: 20px;
-            padding: 15px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #a4b0be; /* Lighter grey for visibility */
-            margin-top: 40px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        }
-
-        /* Responsief voor mobiel */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .search-bar {
-                width: 100%;
-            }
-            .featured-game {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-            .featured-game .game-image {
-                height: 160px;
-                min-height: auto;
-            }
-        }
-    </style>
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -182,21 +19,20 @@
         <h2>New & Popular</h2>
         <div class="game-grid">
             
-            <a href="space_shooter.html" class="game-card featured-game">
-                <img src="plaatjes/space-war.png" alt="Space Shooter" class="game-image">
-                <div class="game-title">Space Shooter</div>
-            </a>
+			<a href="play.html?game=space_shooter.html&title=Space Shooter&desc=Use the mouse to move and SPACE to shoot! Pick up powerups to shoot faster." class="game-card featured-game">
+				<img src="plaatjes/space-war.png" alt="Space Shooter" class="game-image">
+				<div class="game-title">Space Shooter</div>
+			</a>
 
-            <a href="tank_battle.html" class="game-card">
-                <img src="plaatjes/tank-battle.png" alt="Tank Battle" class="game-image">
-                <div class="game-title">Tank Battle</div>
-            </a>
-
-			<a href="race_game.html" class="game-card">
-                <img src="plaatjes/race-game.png" alt="Race Game" class="game-image">
-                <div class="game-title">Race Game</div>
-            </a>
+			<a href="play.html?game=tank_battle.html&title=Tank Battle&desc=Player 1: WASD to drive and SPACE to shoot. Player 2: IJKL to drive and O to shoot." class="game-card">
+				<img src="plaatjes/tank-battle.png" alt="Tank Battle" class="game-image">
+				<div class="game-title">Tank Battle (2P)</div>
+			</a>
 			
+			<a href="play.html?game=race_game.html&title=Race Game&desc=Use arrow keys to drive!" class="game-card">
+				<img src="plaatjes/race-game.png" alt="Race Game" class="game-image">
+				<div class="game-title">Race Game</div>
+			</a>
         </div>
     </main>
 
